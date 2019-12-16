@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.deps.json
 C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.runtimeconfig.json
 C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.runtimeconfig.dev.json
@@ -26,3 +27,33 @@ C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcore
 C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorTargetAssemblyInfo.cache
 C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.dll
 C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.pdb
+=======
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.deps.json
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.runtimeconfig.json
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.runtimeconfig.dev.json
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.dll
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.csprojAssemblyReference.cache
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.csproj.CoreCompileInputs.cache
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorAssemblyInfo.cache
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorAssemblyInfo.cs
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.AssemblyInfoInputs.cache
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.AssemblyInfo.cs
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.pdb
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.dll
+C:\Users\Rudy Franco\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.pdb
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.deps.json
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.runtimeconfig.json
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.runtimeconfig.dev.json
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.dll
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\bin\Debug\netcoreapp2.1\InventarioAPI.pdb
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.csprojAssemblyReference.cache
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.csproj.CoreCompileInputs.cache
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorAssemblyInfo.cache
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorAssemblyInfo.cs
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.AssemblyInfoInputs.cache
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.AssemblyInfo.cs
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.RazorTargetAssemblyInfo.cache
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.dll
+C:\Users\programacion\source\repos\InventarioAPI\InventarioAPI\obj\Debug\netcoreapp2.1\InventarioAPI.pdb
+>>>>>>> 29338d71b197ae945ea06c6e121c117effba2864
