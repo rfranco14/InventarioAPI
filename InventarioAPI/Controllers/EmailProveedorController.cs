@@ -13,6 +13,7 @@ namespace InventarioAPI.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
+    // [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class EmailProveedorController : ControllerBase
     {
 

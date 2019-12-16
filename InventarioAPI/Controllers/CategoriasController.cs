@@ -6,6 +6,8 @@ using AutoMapper;
 using InventarioAPI.Context;
 using InventarioAPI.Entities;
 using InventarioAPI.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,25 +15,58 @@ namespace InventarioAPI.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class CategoriasController : ControllerBase
     {
- 
-            private readonly InventarioDBContext contexto;
-            private readonly IMapper mapper;
 
-            public CategoriasController(InventarioDBContext contexto, IMapper mapper)
+        private readonly InventarioDBContext contexto;
+        private readonly IMapper mapper;
+
+        public CategoriasController(InventarioDBContext contexto, IMapper mapper)
+        {
+            this.contexto = contexto;
+            this.mapper = mapper;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CategoriaDTO>>> Get()
+        {
+            var categorias = await this.contexto.Categorias.ToListAsync();
+            var categoriaDTO = this.mapper.Map<List<CategoriaDTO>>(categorias);
+            return categoriaDTO;
+        }
+
+
+        [HttpGet("{numeroDePagina}", Name = "GetCategoriasPage")]
+        [Route("page/{numeroDePagina}")]
+            public async Task<ActionResult<CategoriaPaginacionDTO>> GetCategoriasPage(int numeroDePagina = 0)
             {
-                this.contexto = contexto;
-                this.mapper = mapper;
+            int cantidadDeRegistros = 5;
+            var categoriaPaginacionDTO = new CategoriaPaginacionDTO();
+            var query = contexto.Categorias.AsQueryable();
+            int totalDeRegistros = query.Count();
+            int totalPaginas = (int)Math.Ceiling((Double) totalDeRegistros / cantidadDeRegistros);
+            categoriaPaginacionDTO.Number = numeroDePagina;
+
+            var categorias = await query
+                .Skip(cantidadDeRegistros * (categoriaPaginacionDTO.Number))
+                .Take(cantidadDeRegistros)
+                .ToListAsync();
+
+            categoriaPaginacionDTO.TotalPages = totalPaginas;
+            categoriaPaginacionDTO.Content = mapper.Map<List<CategoriaDTO>>(categorias);
+
+            if (numeroDePagina == 0)
+            {
+                categoriaPaginacionDTO.First = true;
+            }
+            else if (numeroDePagina == totalPaginas)
+            {
+                categoriaPaginacionDTO.Last = true;
             }
 
-            [HttpGet]
-            public async Task<ActionResult<IEnumerable<CategoriaDTO>>> Get()
-            {
-            var categorias = await contexto.Categorias.ToListAsync();
-            var categoriasDTO = mapper.Map<List<CategoriaDTO>>(categorias);
-            return categoriasDTO;
-            }
+            return categoriaPaginacionDTO;
+        }
 
         [HttpGet ("{id}", Name = "GetCategoria")]
         public async Task<ActionResult<CategoriaDTO>> Get(int id)

@@ -2,6 +2,8 @@
 using InventarioAPI.Context;
 using InventarioAPI.Entities;
 using InventarioAPI.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,6 +15,7 @@ namespace InventarioAPI.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class EmailClienteController : ControllerBase
     {
 
@@ -31,6 +34,36 @@ namespace InventarioAPI.Controllers
             var emailCliente = await contexto.EmailClientes.ToListAsync();
             var emailClienteDTO = mapper.Map<List<EmailClienteDTO>>(emailCliente);
             return emailClienteDTO;
+        }
+
+        [HttpGet("{numeroDePagina}", Name = "GetEmailClientePage")]
+        [Route("page/{numeroDePagina}")]
+        public async Task<ActionResult<EmailClientePaginacionDTO>> GetEmailClientePage(int numeroDePagina = 0)
+        {
+            int cantidadDeRegistros = 5;
+            var emailClientePaginacionDTO = new EmailClientePaginacionDTO();
+            var query = contexto.EmailClientes.AsQueryable();
+            int totalDeRegistros = query.Count();
+            int totalPaginas = (int)Math.Ceiling((Double)totalDeRegistros / cantidadDeRegistros);
+            emailClientePaginacionDTO.Number = numeroDePagina;
+
+            var emailcliente = await query
+                .Skip(cantidadDeRegistros * (emailClientePaginacionDTO.Number))
+                .Take(cantidadDeRegistros)
+                .ToListAsync();
+
+            emailClientePaginacionDTO.TotalPages = totalPaginas;
+            emailClientePaginacionDTO.Content = mapper.Map<List<EmailClienteDTO>>(emailcliente);
+
+            if (numeroDePagina == 0)
+            {
+                emailClientePaginacionDTO.First = true;
+            }
+            else if (numeroDePagina == totalPaginas)
+            {
+                emailClientePaginacionDTO.Last = true;
+            }
+            return emailClientePaginacionDTO;
         }
 
         [HttpGet("{id}", Name = "GetEmailCliente")]

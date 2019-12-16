@@ -20,8 +20,10 @@ namespace InventarioAPI.Entities
         public string Imagen { get; set; }
         public Categoria Categoria { get; set; }
         public TipoEmpaque TipoEmpaque { get; set; }
-        public List<Inventario> Inventarios { get; set; } 
-        public List<DetalleCompra> DetalleCompras { get; set; }
-        public List<DetalleFactura> DetalleFacturas { get; set; }
+
+
+        //public List<Inventario> Inventarios { get; set; } 
+        //public List<DetalleCompra> DetalleCompras { get; set; }
+        //public List<DetalleFactura> DetalleFacturas { get; set; }
     }
 }

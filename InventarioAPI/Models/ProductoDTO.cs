@@ -18,5 +18,7 @@ namespace InventarioAPI.Models
         public decimal PrecioPorMayor { get; set; }
         public int Existencia { get; set; }
         public string Imagen { get; set; }
+        public CategoriaDTO Categoria {get; set;}
+        public TipoEmpaqueDTO TipoEmpaque { get; set; }
     }
 }
